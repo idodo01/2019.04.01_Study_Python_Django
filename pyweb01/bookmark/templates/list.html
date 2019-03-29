@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Bookmark List</h1>
+        {{urlCountn}}개의 북마크가 등록되어 있습니다.
+        <ul>
+            {% for row in urlList %}
+            <li><a href="detail?url={{row.url}}">{{row.title}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
