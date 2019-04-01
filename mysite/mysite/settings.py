@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'jhz^r*4_t2(tp*jr_9s1%tp#96i^&@5ztzgyl%k3is)8))q3i3'
+SECRET_KEY = '@mq1!fh&m1s_^k@%(dv!got)k+5^weg3qd3(wis3@hi3%td0tp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-
     'channels',
     'chat',
     'django.contrib.admin',
@@ -40,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
 ]
 
 # Channels
@@ -53,7 +51,6 @@ CHANNEL_LAYERS = {
         },
     },
 }
-
 
 
 MIDDLEWARE = [
