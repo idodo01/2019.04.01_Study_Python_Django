@@ -7,9 +7,19 @@
 </head>
 
 <body>
-    <textarea id="chat-log" cols="100" rows="20"></textarea><br/>
-    <input id="chat-message-input" type="text" size="100"/><br/>
-    <input id="chat-message-submit" type="button" value="Send"/>
+  
+    <form action="" method="post">
+        <textarea id="chat-log" cols="100" rows="20" readonly></textarea><br/>
+        <p>
+            <label for="id_chat_cont">Chat_cont:</label>
+            <input id="id_chat_cont" type="text" name="chat_cont" maxlength="100" />
+        </p>
+        {% csrf_token %}
+
+        <input type="button" id="chat-message-submit" value="전송"/>
+        <input type="submit" value="채팅 저장"/>
+    </form>
+
 </body>
 
 <script>
@@ -25,26 +35,31 @@
         document.querySelector('#chat-log').value += (message + '\n');
     };
 
-    chatSocket.onclose = function(e) {
-        console.error('Chat socket closed unexpectedly');
-    };
 
-    document.querySelector('#chat-message-input').focus();
-    document.querySelector('#chat-message-input').onkeyup = function(e) {
+   
+
+    document.querySelector('#id_chat_cont').focus();
+    document.querySelector('#id_chat_cont').onkeyup = function(e) {
         if (e.keyCode === 13) {  // enter, return
             document.querySelector('#chat-message-submit').click();
         }
     };
 
     document.querySelector('#chat-message-submit').onclick = function(e) {
-        var messageInputDom = document.querySelector('#chat-message-input');
+        var messageInputDom = document.querySelector('#id_chat_cont');
         var message = messageInputDom.value;
+     
         chatSocket.send(JSON.stringify({
             'message': message
         }));
 
         messageInputDom.value = '';
     };
+
+    chatSocket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
 </script>
 
 </html>
