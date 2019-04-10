@@ -15,8 +15,6 @@ def index(request):
 
 def room(request, room_name):
 
-    chat_cont_all = Chat_cont.objects.all()
-
     if request.method == 'POST':
         room_form = Room_Form(request.POST)
         if room_form.is_valid():
@@ -27,7 +25,6 @@ def room(request, room_name):
     return render(request, 'chat/room.html', {
         'room_name_json': mark_safe(json.dumps(room_name)),
         'room_form':room_form,
-        'chat_cont_all':chat_cont_all
 
     })
 

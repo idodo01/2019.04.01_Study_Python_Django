@@ -1,0 +1,6 @@
+정적 파일은 static파일, media파일로 이루워진다.
+
+static 파일
+https://ssungkang.tistory.com/entry/Django-08-%EC%97%AC%EB%9F%AC-%ED%8C%8C%EC%9D%BC-%EB%8B%A4%EB%A3%A8%EA%B8%B0
+media 파일
+https://ssungkang.tistory.com/entry/Django-09-%EC%97%AC%EB%9F%AC-%ED%8C%8C%EC%9D%BC-%EB%8B%A4%EB%A3%A8%EA%B8%B0-media-%ED%8C%8C%EC%9D%BC?category=320582
